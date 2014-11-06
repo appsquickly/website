@@ -974,6 +974,7 @@ h1.section-title:after,
 
 .footer .address {
     margin-bottom: 30px;
+    color: #ffffff;
 }
 
 .footer .social-icons {
@@ -990,6 +991,7 @@ h1.section-title:after,
 .footer .copy {
     font-size: 12px;
     padding-bottom: 10px;
+    color: #ffffff;
 }
 
 .footer a {
