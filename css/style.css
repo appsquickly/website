@@ -538,8 +538,8 @@ h1.section-title:after,
 
 .pageTitle {
     width: 100%;
-    left: 10%;
-    top: 0%;
+    left: 120px;
+    top: 4px;
     text-align: left;
     position: absolute;
     z-index: 51;
