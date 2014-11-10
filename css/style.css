@@ -538,15 +538,11 @@ h1.section-title:after,
 
 .pageTitle {
     width: 100%;
-    left: 120px;
-    top: 4px;
     text-align: left;
-    position: absolute;
     z-index: 51;
     font-size: 25pt;
     font-weight: bold;
     font-family: Bitter;
-    -webkit-backface-visibility: hidden;
 }
 
 .down {
