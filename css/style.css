@@ -1,6 +1,4 @@
-/* ===================================================== */
-/* Preloader
-/* ===================================================== */
+@import url('http://fonts.googleapis.com/css?family=Bitter');
 
 .spin {
     display: inline-block;
@@ -546,6 +544,7 @@ h1.section-title:after,
     z-index: 51;
     font-size: 55pt;
     font-weight: bold;
+    font-family: Bitter;
     -webkit-backface-visibility: hidden;
 }
 
