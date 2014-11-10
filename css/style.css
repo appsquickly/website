@@ -538,6 +538,17 @@ h1.section-title:after,
     position: relative;
 }
 
+.pageTitle {
+    width: 100%;
+    top: 7%;
+    text-align: center;
+    position: absolute;
+    z-index: 51;
+    font-size: 55pt;
+    font-weight: bold;
+    -webkit-backface-visibility: hidden;
+}
+
 .down {
     bottom: 50px;
     color: #fff;
