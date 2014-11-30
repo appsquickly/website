@@ -1,8 +1,5 @@
 <?php
 
-ini_set('display_errors',1);
-error_reporting(E_ALL);
-
 //Retrieve form data. 
 //GET - user submitted data using AJAX
 //POST - in case user does not support javascript, we'll use POST instead
