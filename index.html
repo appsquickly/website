@@ -152,15 +152,15 @@
     <div class="section-title">
         <h1 class="title">Our Portfolio</h1>
 
-        <p class="description">These are some of our previous works</p>
+        <p class="description">Here are some of the projects that we've worked on previously.</p>
     </div>
 
     <!-- CATEGORIES -->
     <ul class="filter-menu">
         <li class="selected" data-cat="*">All</li>
-        <li data-cat="branding">Branding</li>
-        <li data-cat="photography">Photography</li>
-        <li data-cat="art">Art</li>
+        <li data-cat="branding">iOS Development</li>
+        <li data-cat="photography">Android Development</li>
+        <li data-cat="art">Backend Development</li>
     </ul>
     <!-- End .filter-menu -->
 </div>
@@ -174,7 +174,7 @@
         <!-- ITEM 1 -->
         <div class="port-item showme" data-cat="branding">
             <div class="port-overlay">
-                <img src="img/portfolio/port-1.jpg" alt="Portfolio Image">
+                <img src="img/portfolio/aco3d.png" alt="ACO Virtual">
                 <a class="project-btn" href="single-project.html"><i class="fa fa-search"></i></a>
             </div>
             <div class="port-info">
@@ -372,7 +372,7 @@
 
                 <h4 class="title">Research</h4>
 
-                <p>This is the stage most often forgotton, but is vitally important</p>
+                <p>This is the stage most often forgotten, but is vitally important</p>
             </li>
             <li class="one-third animated middle" data-animate="flipInY" data-animate-delay="1500">
                 <div class="feature-hex">
@@ -463,17 +463,16 @@
             <ul class="testimonial bxslider">
                 <li>
                     <h1 class="quote">
-                        <i class="icon-left-quote"></i>Every child is an artist, the problem is staying an artist when
-                        you grow up<i class="icon-right-quote"></i>
+                        <i class="icon-left-quote"></i>For a great idea to change the world, it needs a solid implementation.<i class="icon-right-quote"></i>
                     </h1>
-                    <span class="name">-Pablo Picasso-</span>
+                    <span class="name">-Jasper Blues--</span>
                 </li>
                 <li>
                     <h1 class="quote">
                         <i class="icon-left-quote"></i>
-                        Creativity is allowing yourself to make mistakes. Art is knowing which ones to keep.
+                        My passion is to present complex ideas in a way that is simple and intuitive to the end user.
                     </h1>
-                    <span class="name">-James Russell Lowell-</span>
+                    <span class="name">-Jasper Blues-</span>
                 </li>
                 <li>
                     <h1 class="quote">
@@ -777,7 +776,7 @@
             <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, veniam, odio eius ab
                 maiores illo.</p>
         </div>
-        <form method="post" action="php/send_message.php" class="contact-form">
+        <form method="post" action="contact-form.php" class="contact-form">
             <div class="one-half animated" data-animate="fadeInDown">
 					<span>
 						<input type="text" name="name" id="name" placeholder="name">
@@ -837,6 +836,79 @@
 
 <!-- THEME SCRIPT -->
 <script src="js/main.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        //if submit button is clicked
+        $('#submit').click(function () {
+
+            //Get the data from all the fields
+            var name = $('input[name=name]');
+            var email = $('input[name=email]');
+            var comment = $('textarea[name=message]');
+
+            //Simple validation to make sure user entered something
+            //If error found, add hightlight class to the text field
+            if (name.val() == '') {
+                name.addClass('hightlight');
+                return false;
+            } else name.removeClass('hightlight');
+
+            if (email.val() == '') {
+                email.addClass('hightlight');
+                return false;
+            } else email.removeClass('hightlight');
+
+            if (comment.val() == '') {
+                comment.addClass('hightlight-message');
+                return false;
+            } else comment.removeClass('hightlight-message');
+
+            //organize the data properly
+            var data = 'name=' + name.val() + '&email=' + email.val() + '&comment=' + encodeURIComponent(comment.val());
+
+            //disabled all the text fields
+            $('.text').attr('disabled', 'true');
+
+            //show the loading sign
+            document.getElementById("submit").disabled = true;
+            document.getElementById("submit").value = 'Please Wait..';
+
+            //start the ajax
+            $.ajax({
+                //this is the php file that processes the data and send mail
+                url: "contact-form.php",
+
+                //GET method is used
+                type: "GET",
+
+                //pass the data
+                data: data,
+
+                //Do not cache the page
+                cache: false,
+
+                //success
+                success: function (html) {
+                    //if process.php returned 1/true (send mail success)
+                    if (html == 1) {
+                        //hide the form
+                        $('.contact-form-div').fadeOut('slow');
+
+                        //show the success message
+                        $('.done').fadeIn('slow');
+
+                        //if process.php returned 0/false (send mail failed)
+                    } else alert('Sorry, unexpected error. Please try again later.');
+                }
+            });
+
+            //cancel the submit button default behaviours
+            return false;
+        });
+    })
+</script>
 
 
 </body>
