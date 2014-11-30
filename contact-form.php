@@ -8,12 +8,6 @@ error_reporting(E_ALL);
 //POST - in case user does not support javascript, we'll use POST instead
 $name = ($_GET['name']) ? $_GET['name'] : $_POST['name'];
 $email = ($_GET['email']) ?$_GET['email'] : $_POST['email'];
-$phonenumber = ($_GET['phonenumber']) ?$_GET['phonenumber'] : $_POST['phonenumber'];
-$website = ($_GET['website']) ?$_GET['website'] : $_POST['website'];
-$projectbudget = ($_GET['projectbudget']) ?$_GET['projectbudget'] : $_POST['projectbudget'];
-$timeframe = ($_GET['timeframe']) ?$_GET['timeframe'] : $_POST['timeframe'];
-$youreinterestedin = ($_GET['youreinterestedin']) ?$_GET['youreinterestedin'] : $_POST['youreinterestedin'];
-$howdidyouhearaboutus = ($_GET['howdidyouhearaboutus']) ?$_GET['howdidyouhearaboutus'] : $_POST['howdidyouhearaboutus'];
 $comment = ($_GET['comment']) ?$_GET['comment'] : $_POST['comment'];
 
 //flag to indicate which method it uses. If POST set it to 1
@@ -28,7 +22,7 @@ if (!$comment) $errors[count($errors)] = 'Please enter your comment.';
 if (!$errors) {
 
 	//recipient
-	$to = 'nobody';
+	$to = 'Jasper Blues <jasper@appsquick.ly>';
 	//sender
 	$from = $name . ' <' . $email . '>';
 	
@@ -43,12 +37,6 @@ if (!$errors) {
 		<table>
 			<tr><td>Name:</td><td>' . $name . '</td></tr>
 			<tr><td>Email:</td><td>' . $email . '</td></tr>
-			<tr><td>Phone Number:</td><td>' . $phonenumber . '</td></tr>
-			<tr><td>Website:</td><td>' . $website . '</td></tr>
-			<tr><td>Project Budget:</td><td>' . $projectbudget . '</td></tr>
-			<tr><td>Timeframe:</td><td>' . $timeframe . '</td></tr>
-			<tr><td>You Are Interested In:</td><td>' . $youreinterestedin . '</td></tr>
-			<tr><td>How did you hear about us:</td><td>' . $howdidyouhearaboutus . '</td></tr>
 			<tr><td>Message:</td><td>' . nl2br($comment) . '</td></tr>
 		</table>
 	</body>
