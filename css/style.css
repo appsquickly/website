@@ -333,7 +333,9 @@ h1.section-title:after,
     margin-bottom: 20px;
     padding: 0 2%;
     position: relative;
-    width: 24.9%;
+    /*TODO : Change width back when more projects arrive */
+    /*width: 24.9%;*/
+    width: 48.9%;
 }
 
 
