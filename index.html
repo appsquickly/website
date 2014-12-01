@@ -773,8 +773,7 @@
         <div class="section-title">
             <h3 class="title">Contact Us</h3>
 
-            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, veniam, odio eius ab
-                maiores illo.</p>
+            <p id="contactDescription" class="description">We'd love to hear from you! Contact us using the form below.</p>
         </div>
         <form method="post" action="contact-form.php" class="contact-form">
             <div class="one-half animated" data-animate="fadeInDown">
@@ -895,7 +894,8 @@
                     if (html == 1) {
                         //hide the form
                         $('.contact-form').fadeOut('slow');
-                        alert("Thanks. We've received your message!");
+                        $('.contactDescription').text('Thanks! Your message has been received.');
+//                        alert("Thanks. We've received your message!");
 
                         //show the success message
 //                        $('.done').fadeIn('slow');
