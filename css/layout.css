@@ -175,10 +175,10 @@
 			width: 100%;
 		}
 
-		.selectnav {
-			display: block;
-			float: right;
-		}
+		/*.selectnav {*/
+			/*display: block;*/
+			/*float: right;*/
+		/*}*/
 
 		.header {
 	background: #50adca;
