@@ -1,0 +1,4 @@
+# mobile site redirection
+RewriteCond %{HTTP_USER_AGENT} "(android|blackberry|googlebot-mobile|iemobile|iphone|ipod|opera mobile|palmos|webos)" [NC]
+RewriteRule img/island_final.jpg        img/island_mobile.jpg [R=301]
+
