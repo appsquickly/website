@@ -1,3 +1,3 @@
 # mobile site redirection
 RewriteCond %{HTTP_USER_AGENT} "(android|blackberry|googlebot-mobile|iemobile|iphone|ipod|opera mobile|palmos|webos)" [NC]
-RewriteRule ^.*img/Desktop/(.*)$        /img/Mobile/$1 [R=301]
+RewriteRule ^.*img/Desktop/(.*)$        img/Mobile/$1 [R=301]
