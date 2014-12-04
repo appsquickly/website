@@ -56,28 +56,20 @@ if ($_POST) {
 //Simple mail function with HTML header
 function sendmail($subject, $message, $from) {
 
-    $mail = new PHPMailer;
-
-    // Enable verbose debug output
-    $mail->SMTPDebug = 2;
-    $mail->isSMTP();
-    $mail->Host = 'smtp.gmail.com';
-    $mail->SMTPAuth = true;
-    $mail->Username = 'analytics.appsquick.ly@gmail.com';
-    $mail->Password = 'b0h0l4ltai';
-    //$mail->SMTPSecure = 'tls';
-    $mail->Port = 25;
-
-
-    $mail->From = $from;
-    $mail->AddReplyTo($from,"AppsQuickly Enquiry");
-    $mail->addAddress('jasper@appsquick.ly', 'Jasper Blues');
-    $mail->addAddress('aleksey@appsquick.ly', 'Aleksey Garbarev');
-    $mail->isHTML(true);
-
-    $mail->Subject = $subject;
-    $mail->Body    = $message;
-    $mail->MsgHTML = $message;
+    $mail = new PHPMailer(); // create a new object
+    $mail->IsSMTP(); // enable SMTP
+    $mail->SMTPDebug = 1; // debugging: 1 = errors and messages, 2 = messages only
+    $mail->SMTPAuth = true; // authentication enabled
+    $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for GMail
+    $mail->Host = "smtp.gmail.com";
+    $mail->Port = 465; // or 587
+    $mail->IsHTML(true);
+    $mail->Username = "analytics.appsquick.ly@gmail.com";
+    $mail->Password = "b0h0l4ltai";
+    $mail->SetFrom("jasper.reloaded@gmail.com");
+    $mail->Subject = "Test";
+    $mail->Body = "hello";
+    $mail->AddAddress("jasper@appsquick.ly");
 
     if(!$mail->send()) {
         error_log("Message could not be sent.");
