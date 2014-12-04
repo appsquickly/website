@@ -64,7 +64,7 @@ function sendmail($subject, $message, $from) {
     $mail->Host = "smtp.gmail.com";
     $mail->Port = 465; // or 587
     $mail->IsHTML(true);
-    $mail->Username = "analytics.appsquick.ly@gmail.com";
+    $mail->Username = "analytics.appsquick.ly@gmail.com";  
     $mail->Password = "b0h0l4ltai";
     $mail->SetFrom("jasper.reloaded@gmail.com");
     $mail->Subject = "Test";
