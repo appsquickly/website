@@ -52,14 +52,6 @@ if ($_POST) {
     echo $result;
 }
 
-//if the errors array has values
-} else {
-	//display the errors message
-	for ($i=0; $i<count($errors); $i++) echo $errors[$i] . '<br/>';
-	echo '<a href="form.php">Back</a>';
-	exit;
-}
-
 
 //Simple mail function with HTML header
 function sendmail($subject, $message, $from) {
