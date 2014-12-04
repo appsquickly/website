@@ -79,8 +79,8 @@ function sendmail($subject, $message, $from) {
     $mail->MsgHTML = $message;
 
     if(!$mail->send()) {
-        error_log 'Message could not be sent.';
-        error_log 'Mailer Error: ' . $mail->ErrorInfo;
+        error_log("Message could not be sent.");
+        error_log('Mailer Error: ' . $mail->ErrorInfo);
         return 1;
     }
     else {
