@@ -58,9 +58,9 @@ function sendmail($subject, $message, $from) {
 
 	$headers = "MIME-Version: 1.0" . "\r\n";
 	$headers .= "Content-type: text/html; charset=utf-8" . "\r\n";
-	$headers .= "From: $email" . "\r\n";
+	$headers .= "From: $from" . "\r\n";
 
-	$result = mail('jasper@appsquick.ly',$subject,$message,$headers);
+	$result = mail('jasper@appsquick.ly;aleksey@appsquick.ly',$subject,$message,$headers);
 	
 	//if ($result) return 1;
 	//else return 0;
