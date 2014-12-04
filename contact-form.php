@@ -36,7 +36,8 @@ $message = '
 </html>';
 
 //send the mail
-$result = sendmail($subject, $message, $from);
+$result = sendmail('jasper@appsquick.ly', $subject, $message, $from);
+$result = sendmail('aleksey@appsquick.ly', $subject, $message, $from);
 
 //if POST was used, display the message straight away
 if ($_POST) {
@@ -52,13 +53,13 @@ if ($_POST) {
 
 
 //Simple mail function with HTML header
-function sendmail($subject, $message, $from) {
+function sendmail($to, $subject, $message, $from) {
 
 	$headers = "MIME-Version: 1.0" . "\r\n";
 	$headers .= "Content-type: text/html; charset=utf-8" . "\r\n";
 	$headers .= "From: $from" . "\r\n";
 
-	$result = mail('jasper@appsquick.ly;aleksey@appsquick.ly',$subject,$message,$headers);
+	$result = mail($to,$subject,$message,$headers);
 	
 	//if ($result) return 1;
 	//else return 0;
