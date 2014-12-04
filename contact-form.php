@@ -65,8 +65,8 @@ function sendmail($subject, $message, $from) {
     $mail->SMTPAuth = true;
     $mail->Username = 'analytics.appsquick.ly@gmail.com';
     $mail->Password = 'b0h0l4ltai';
-    $mail->SMTPSecure = 'tls';
-    $mail->Port = 587;
+    $mail->SMTPSecure = 'ssl';
+    $mail->Port = 465;
 
     $mail->From = $from;
     $mail->FromName = 'AppsQuick.ly Site Comment';
