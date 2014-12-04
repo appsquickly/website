@@ -66,7 +66,8 @@ function sendmail($subject, $message, $from) {
     $mail->Username = 'analytics.appsquick.ly@gmail.com';
     $mail->Password = 'b0h0l4ltai';
     //$mail->SMTPSecure = 'tls';
-    //$mail->Port = 587;
+    $mail->Port = 25;
+
 
     $mail->From = $from;
     $mail->AddReplyTo($from,"AppsQuickly Enquiry");
