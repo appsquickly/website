@@ -52,17 +52,14 @@ if ($_POST) {
 }
 
 
-//Simple mail function with HTML header
 function sendmail($to, $subject, $message, $from) {
 
 	$headers = "MIME-Version: 1.0" . "\r\n";
 	$headers .= "Content-type: text/html; charset=utf-8" . "\r\n";
 	$headers .= "From: $from" . "\r\n";
 
-	$result = mail($to,$subject,$message,$headers);
-	
-	//if ($result) return 1;
-	//else return 0;
+	mail($to,$subject,$message,$headers);
+	return 1;
 }
 
 ?>
