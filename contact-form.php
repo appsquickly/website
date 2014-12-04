@@ -1,7 +1,5 @@
 <?php
 
-require 'phpmailer/PHPMailerAutoload.php';
-
 //Retrieve form data.
 //GET - user submitted data using AJAX
 //POST - in case user does not support javascript, we'll use POST instead
