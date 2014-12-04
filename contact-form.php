@@ -1,6 +1,8 @@
 <?php
 
-//Retrieve form data. 
+require 'PHPMailerAutoload.php';
+
+//Retrieve form data.
 //GET - user submitted data using AJAX
 //POST - in case user does not support javascript, we'll use POST instead
 $name = ($_GET['name']) ? $_GET['name'] : $_POST['name'];
@@ -65,15 +67,43 @@ if (!$errors) {
 
 //Simple mail function with HTML header
 function sendmail($to, $subject, $message, $from) {
-	$headers = "MIME-Version: 1.0" . "\r\n";
-	$headers .= "Content-type: text/html; charset=utf-8" . "\r\n";
-	$headers .= "From: $email" . "\r\n";
-	$headers .= "g_smtp_allow_invalid: true" . "\r\n";
 
-	$result = mail($to,$subject,$message,$headers);
+    $mail = new PHPMailer;
+
+    // Enable verbose debug output
+    //$mail->SMTPDebug = 3;
+    $mail->isSMTP();
+    $mail->Host = 'smtp.gmail.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'analytics.appsquick.ly@gmail.com';
+    $mail->Password = 'b0h0l4ltai';
+    $mail->SMTPSecure = 'tls';
+    $mail->Port = 587;
+
+    $mail->From = $from
+    $mail->FromName = 'AppsQuick.ly Site Comment';
+    $mail->addAddress('jasper@appsquick.ly', 'Jasper Blues');
+    $mail->addAddress('aleksey@appsquick.ly', 'Aleksey Garbarev');
+    $mail->isHTML(true);
+
+    $mail->Subject = $subject
+    $mail->Body    = $message
+
+    if(!$mail->send()) {
+        echo 'Message could not be sent.';
+        echo 'Mailer Error: ' . $mail->ErrorInfo;
+        return 1;
+    }
+
+	//$headers = "MIME-Version: 1.0" . "\r\n";
+	//$headers .= "Content-type: text/html; charset=utf-8" . "\r\n";
+	//$headers .= "From: $email" . "\r\n";
+	//$headers .= "g_smtp_allow_invalid: true" . "\r\n";
+
+	//$result = mail($to,$subject,$message,$headers);
 	
-	if ($result) return 1;
-	else return 0;
+	//if ($result) return 1;
+	//else return 0;
 }
 
 ?>
