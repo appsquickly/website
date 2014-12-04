@@ -56,36 +56,11 @@ if ($_POST) {
 //Simple mail function with HTML header
 function sendmail($subject, $message, $from) {
 
-    $mail = new PHPMailer(); // create a new object
-    $mail->IsSMTP(); // enable SMTP
-    $mail->SMTPDebug = 1; // debugging: 1 = errors and messages, 2 = messages only
-    $mail->SMTPAuth = true; // authentication enabled
-    $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for GMail
-    $mail->Host = "smtp.gmail.com";
-    $mail->Port = 465; // or 587
-    $mail->IsHTML(true);
-    $mail->Username = "analytics.appsquick.ly@gmail.com";  
-    $mail->Password = "b0h0l4ltai";
-    $mail->SetFrom("jasper.reloaded@gmail.com");
-    $mail->Subject = "Test";
-    $mail->Body = "hello";
-    $mail->AddAddress("jasper@appsquick.ly");
+	$headers = "MIME-Version: 1.0" . "\r\n";
+	$headers .= "Content-type: text/html; charset=utf-8" . "\r\n";
+	$headers .= "From: $email" . "\r\n";
 
-    if(!$mail->send()) {
-        error_log("Message could not be sent.");
-        error_log('Mailer Error: ' . $mail->ErrorInfo);
-        return 1;
-    }
-    else {
-        return 0;
-    }
-
-	//$headers = "MIME-Version: 1.0" . "\r\n";
-	//$headers .= "Content-type: text/html; charset=utf-8" . "\r\n";
-	//$headers .= "From: $email" . "\r\n";
-	//$headers .= "g_smtp_allow_invalid: true" . "\r\n";
-
-	//$result = mail($to,$subject,$message,$headers);
+	$result = mail('jasper@appsquick.ly',$subject,$message,$headers);
 	
 	//if ($result) return 1;
 	//else return 0;
