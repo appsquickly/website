@@ -59,22 +59,24 @@ function sendmail($subject, $message, $from) {
     $mail = new PHPMailer;
 
     // Enable verbose debug output
-    $mail->SMTPDebug = 3;
+    $mail->SMTPDebug = 2;
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
     $mail->Username = 'analytics.appsquick.ly@gmail.com';
     $mail->Password = 'b0h0l4ltai';
-    $mail->SMTPSecure = 'ssl';
-    $mail->Port = 465;
+    $mail->SMTPSecure = 'tls';
+    $mail->Port = 587;
 
     $mail->From = $from;
+    $mail->AddReplyTo($from,"AppsQuickly Enquiry");
     $mail->addAddress('jasper@appsquick.ly', 'Jasper Blues');
     $mail->addAddress('aleksey@appsquick.ly', 'Aleksey Garbarev');
     $mail->isHTML(true);
 
     $mail->Subject = $subject;
     $mail->Body    = $message;
+    $mail->MsgHTML = $body;
 
     if(!$mail->send()) {
         echo 'Message could not be sent.';
