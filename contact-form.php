@@ -80,14 +80,14 @@ function sendmail($to, $subject, $message, $from) {
     $mail->SMTPSecure = 'tls';
     $mail->Port = 587;
 
-    $mail->From = $from
+    $mail->From = $from;
     $mail->FromName = 'AppsQuick.ly Site Comment';
     $mail->addAddress('jasper@appsquick.ly', 'Jasper Blues');
     $mail->addAddress('aleksey@appsquick.ly', 'Aleksey Garbarev');
     $mail->isHTML(true);
 
-    $mail->Subject = $subject
-    $mail->Body    = $message
+    $mail->Subject = $subject;
+    $mail->Body    = $message;
 
     if(!$mail->send()) {
         echo 'Message could not be sent.';
