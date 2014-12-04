@@ -76,7 +76,7 @@ function sendmail($subject, $message, $from) {
 
     $mail->Subject = $subject;
     $mail->Body    = $message;
-    $mail->MsgHTML = $body;
+    $mail->MsgHTML = $message;
 
     if(!$mail->send()) {
         echo 'Message could not be sent.';
