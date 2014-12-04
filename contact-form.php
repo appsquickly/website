@@ -17,44 +17,40 @@ if (!$name) $errors[count($errors)] = 'Please enter your name.';
 if (!$email) $errors[count($errors)] = 'Please enter your email.'; 
 if (!$comment) $errors[count($errors)] = 'Please enter your comment.'; 
 
-//if the errors array is empty, send the mail
-if (!$errors) {
 
-	//recipient
-	$to = 'Jasper Blues <aleksey@garbarev.com>';
-	//sender
-	$from = $name . ' <' . $email . '>';
-	
-	//subject and the html message
-	$subject = 'Comment from ' . $name;	
-	$message = '
-	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-	<html xmlns="http://www.w3.org/1999/xhtml">
-	<head></head>
-	<body>
-		<table>
-			<tr><td>Name:</td><td>' . $name . '</td></tr>
-			<tr><td>Email:</td><td>' . $email . '</td></tr>
-			<tr><td>Message:</td><td>' . nl2br($comment) . '</td></tr>
-		</table>
-	</body>
-	</html>';
+//sender
+$from = $name . ' <' . $email . '>';
 
-	//send the mail
-	$result = sendmail($to, $subject, $message, $from);
-	
-	//if POST was used, display the message straight away
-	if ($_POST) {
-		if ($result) echo 'Thank you! We have received your message.';
-		else echo 'Sorry, unexpected error. Please try again later';
-		
-	//else if GET was used, return the boolean value so that 
-	//ajax script can react accordingly
-	//1 means success, 0 means failed
-	} else {
-		echo $result;	
-	}
+//subject and the html message
+$subject = 'Comment from ' . $name;
+$message = '
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head></head>
+<body>
+    <table>
+        <tr><td>Name:</td><td>' . $name . '</td></tr>
+        <tr><td>Email:</td><td>' . $email . '</td></tr>
+        <tr><td>Message:</td><td>' . nl2br($comment) . '</td></tr>
+    </table>
+</body>
+</html>';
+
+//send the mail
+$result = sendmail($subject, $message, $from);
+
+//if POST was used, display the message straight away
+if ($_POST) {
+    if ($result) echo 'Thank you! We have received your message.';
+    else echo 'Sorry, unexpected error. Please try again later';
+
+//else if GET was used, return the boolean value so that
+//ajax script can react accordingly
+//1 means success, 0 means failed
+} else {
+    echo $result;
+}
 
 //if the errors array has values
 } else {
@@ -66,12 +62,12 @@ if (!$errors) {
 
 
 //Simple mail function with HTML header
-function sendmail($to, $subject, $message, $from) {
+function sendmail($subject, $message, $from) {
 
     $mail = new PHPMailer;
 
     // Enable verbose debug output
-    //$mail->SMTPDebug = 3;
+    $mail->SMTPDebug = 3;
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
@@ -92,6 +88,9 @@ function sendmail($to, $subject, $message, $from) {
     if(!$mail->send()) {
         echo 'Message could not be sent.';
         echo 'Mailer Error: ' . $mail->ErrorInfo;
+        return 0;
+    }
+    else {
         return 1;
     }
 
