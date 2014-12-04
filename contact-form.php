@@ -1,6 +1,7 @@
 <?php
 
 require_once 'vendor/autoload.php';
+require 'PHPMailerAutoload.php';
 
 //Retrieve form data.
 //GET - user submitted data using AJAX
