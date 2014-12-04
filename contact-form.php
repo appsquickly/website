@@ -69,7 +69,6 @@ function sendmail($subject, $message, $from) {
     $mail->Port = 465;
 
     $mail->From = $from;
-    $mail->FromName = 'AppsQuick.ly Site Comment';
     $mail->addAddress('jasper@appsquick.ly', 'Jasper Blues');
     $mail->addAddress('aleksey@appsquick.ly', 'Aleksey Garbarev');
     $mail->isHTML(true);
@@ -80,10 +79,10 @@ function sendmail($subject, $message, $from) {
     if(!$mail->send()) {
         echo 'Message could not be sent.';
         echo 'Mailer Error: ' . $mail->ErrorInfo;
-        return 0;
+        return 1;
     }
     else {
-        return 1;
+        return 0;
     }
 
 	//$headers = "MIME-Version: 1.0" . "\r\n";
