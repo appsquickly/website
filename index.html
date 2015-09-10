@@ -854,6 +854,7 @@
             //Get the data from all the fields
             var name = $('input[name=name]');
             var email = $('input[name=email]');
+            var subject = $('input[name=subject]');
             var comment = $('textarea[name=message]');
 
             //Simple validation to make sure user entered something
@@ -873,15 +874,10 @@
                 return false;
             } else comment.removeClass('hightlight-message');
 
-            //organize the data properly
-            var data = 'name=' + name.val() + '&email=' + email.val() + '&comment=' + encodeURIComponent(comment.val());
 
-            //disabled all the text fields
-            $('.text').attr('disabled', 'true');
 
-            //show the loading sign
-            document.getElementById("submit").disabled = true;
             document.getElementById("submit").value = 'Please Wait..';
+            window.open('mailto:jasper@appsquick.ly?subject='+subject.val()+'&body='+comment.val()+'&from=<'+name.val()+"> " + email.val());
 
             //start the ajax
             $.ajax({
