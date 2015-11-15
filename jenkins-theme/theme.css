@@ -5,7 +5,7 @@
     padding: 3px;
 }
 
-div.col-xs-24 .pane-header {
+div.col-xs-24.pane-header {
     padding-right: 10px !important;
 }
 
