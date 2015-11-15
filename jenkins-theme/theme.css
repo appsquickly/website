@@ -5,4 +5,10 @@
     padding: 3px;
 }
 
+div.col-xs-24 .pane-header {
+    padding-right: 10px !important;
+}
 
+div #side-panel {
+    padding-left: 10px !important;
+}
