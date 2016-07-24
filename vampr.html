@@ -1,0 +1,107 @@
+<div class="container">
+
+    <div class="section-title">
+        <h1 class="title">Vampr</h1>
+
+        <p class="description">A social application that allows like-minded musicians and music lovers to connect.</p>
+    </div>
+
+    <div class="two-thirds">
+
+        <div class="portfolio-slider-wrapper">
+            <ul class="portfolio-slider bxslider">
+                <!--<li>-->
+                <!--<img src="img/portfolio/vampr/josh.jpg" alt="Slide 1">-->
+                <!--</li>-->
+                <li>
+                    <img src="img/portfolio/vampr/slide2.png" alt="Slide 2">
+                </li>
+                <li>
+                    <img src="img/portfolio/vampr/slide3.jpg" alt="Slide 3">
+                </li>
+            </ul>
+        </div>
+        <!-- End .portfolio-slider-wrapper -->
+
+    </div>
+    <!-- End .three-fourths -->
+
+    <div class="one-third last">
+
+        <div class="row">
+            <h4 class="sub-title">The brief</h4>
+
+            <p><i>"Melbourne musician Josh Simons has enjoyed national radio airplay and more than a million streams for
+                his band, Buchanan, but when it came to finding the right players to hit the road he realised he needed
+                the muso's equivalent of the Tinder dating app."
+                <a href="http://www.theage.com.au/entertainment/music/vampr-app-aims-to-become-the-musicians-equivalent-to-tinder-20160519-gozaa3.html">--The
+                    Age, May 2016</a></i></p>
+            <p><i>With co-founder and <a href="https://en.wikipedia.org/wiki/Hunters_%26_Collectors">Hunters &amp;
+                Collectors</a> guitarist <a href="https://en.wikipedia.org/wiki/Barry_Palmer_(musician)">
+                Baz Palmer</a>, Josh contacted AppsQuick.ly to talk about making his vision a reality.
+                </a></i></p>
+        </div>
+
+        <div class="row">
+            <h4 class="sub-title">Implementation</h4>
+
+            <p>Josh &amp; Baz knew they were in good hands with regards to an iOS implementation, given that one of the
+                largest app communities in the world were already using our <a href="http://typhoonframework.org/">Typhoon</a>
+                framework to power their meet-up app. However, with regards to the backend we saw a number
+                of interesting new challenges ahead. . . </p>
+            <p>Our mathematically-minded senior consultant, Ivan Zezyulya, directed us towards <a
+                    href="https://neo4j.com/">Neo4j</a>, which is a graph database. Neo4j made it easy for us to capture
+                candidate information and then evolve meaningful insights based on, as yet, unknown criteria.</p>
+            <p>Coupled with Neo4j we used an <a href="https://github.com/neo4j/neo4j-ogm">object to graph mapping
+                (OGM)</a>
+                tool with professional support from our new friends at <a href="http://graphaware.com">GraphAware</a>.
+                The OGM tool further facilitated rapid innovation because it allowed us to take code in the
+                direction of new requirements, without having to attend to tedious boiler-plate concerns. When we were
+                ready to take the app into production, the tool supported the incorporation of custom queries in order
+                to achieve performance goals and massive scale.</p>
+        </div>
+
+        <div class="row">
+            <h4 class="sub-title">Project details</h4>
+            <ul class="project-details">
+                <li><i class="fa fa-calendar"></i><strong>Date:</strong> <span
+                        class="date">October 2015 to May 2016</span>
+                </li>
+                <li><i class="fa fa-user"></i><strong>Client:</strong> <a
+                        href="https://itunes.apple.com/us/app/vampr-discover-connect-collaborate/id1069819177?mt=8">Vampr</a>
+                </li>
+                <li><i class="fa fa-wrench"></i><strong>What we Used:</strong> iOS SDKs, <a
+                        href="http://www.typhoonframework.org">Typhoon Framework</a>,
+                    <a href="http://projects.spring.io/spring-boot/">Spring Boot</a>,
+                    <a href="https://kotlinlang.org/">Kotlin</a>,
+                    <a href="https://neo4j.com/">Neo4j</a>, <a href="https://github.com/neo4j/neo4j-ogm">Neo4j OGM</a>,
+                    <a href="https://angularjs.org/">AngularJS</a>.
+                </li>
+            </ul>
+        </div>
+
+        <a href="https://itunes.apple.com/us/app/vampr-discover-connect-collaborate/id1069819177?mt=8"
+           class="button outline">Visit Website</a>
+
+    </div>
+    <!-- End .one-fourth -->
+</div><!-- End .container-->
+
+<!-- Google Analytics -->
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-57332672-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
