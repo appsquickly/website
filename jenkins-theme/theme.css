@@ -163,7 +163,7 @@ img[src$="images/32x32/aborted.gif"],
 img[src$="images/32x32/aborted_anime.gif"] {
     width: 0;
     height: 24px;
-    padding: 0 24px 0 0;
+    padding: 0 33px 0 0;
     margin-left: 5px
 }
 img[src$="images/48x48/blue.png"],
