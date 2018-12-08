@@ -1982,3 +1982,46 @@ div.light_square .pp_close {
 
   z-index: 9999;
 }
+
+.map {
+    margin-top: 23px;
+    overflow: hidden;
+}
+.map figure {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin-bottom: 3px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.map figure iframe {
+    width: 100%;
+    height: 467px;
+    max-width: 100%;
+}
+.img_border.map {
+    max-width: 535px;
+}
+/**** end Map ****/
+/**** start address section ****/
+.address1 {
+    margin-top: 1em;
+    display: block;
+}
+.address1 dt {
+    font: bold 15px/20px 'Open Sans', Arial, sans-serif;
+    color: #000;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+.address1 dd span {
+    min-width: 84px;
+    display: inline-block;
+    text-align: left;
+}
+.address1 dd span.col1 {
+    min-width: 0;
+}

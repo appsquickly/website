@@ -166,7 +166,7 @@ html, body {
 }
 
 body {
-    font: 14px/1.5 'Open Sans', sans-serif;
+    font: 1em 'Open Sans', sans-serif;
     color: #909090;
     font-weight: 300;
     -webkit-font-smoothing: antialiased;
